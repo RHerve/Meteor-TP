@@ -1,4 +1,4 @@
-# Meteor-TP
+# Meteor - Contact list
 Project made during class.
 
 This is a contact list made with Meteor.
