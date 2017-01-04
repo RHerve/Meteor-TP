@@ -1,0 +1,63 @@
+<head>
+  <title>TP - Meteor</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+</head>
+
+<body>
+  {{> login}}
+  <div class="wrap">
+    
+    <h1>Welcome to your contact list !</h1>
+    {{> add}}
+    {{> list}}
+  </div>
+</body>
+
+<!-- Top bar -->
+<template name="login">
+  <div class="login-bar">
+    
+  </div>
+</template>
+
+<!-- Add contacts -->
+<template name="add">
+  <div class="block search">
+    <h2>Add a contact</h2>
+    <input type="text" placeholder="Name" id="nom">
+    <input type="text" placeholder="First name" id="prenom">
+    <!-- <input type="file" name="img" /> -->
+
+    <button class="add">Add</button>
+  </div>
+</template>
+
+<!-- Call list -->
+<template name="list">
+  <h1>Your current contact list:</h1>
+  <ul>
+    {{#each contacts}}
+      {{> listing}}
+    {{/each}}
+  </ul>
+</template>
+
+<!-- List of contacts -->
+<template name="listing">
+  <div class="block">
+    <li id="contactList">
+        <span id="nom">{{name}}</span> <span id="prenom">{{firstname}}</span>
+        <div class="actions">
+          <button class="delete">X</button>
+          <button class="update">Edit</button>
+        </div>
+        <div class="clear"></div>
+        <!-- Confirm -->
+        <div id="#" class="fieldUpdate invisible">
+          <input type="text" class="nameUpdate">
+          <input type="text" class="firstNameUpdate">
+          <button id="newUpdate">Confirm</button>
+        </div>
+    </li>
+  </div>
+</template>
